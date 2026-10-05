@@ -2558,6 +2558,7 @@ public class HomeController implements Controller {
           new ThreadedTaskController.ExceptionHandler() {
             public void handleException(Exception ex) {
               if (!(ex instanceof InterruptedRecorderException)) {
+                ex.printStackTrace();
                 if (ex instanceof RecorderException) {
                   String message = preferences.getLocalizedString(
                       HomeController.class, "printToPDFError", pdfName);
